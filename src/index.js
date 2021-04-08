@@ -4,9 +4,9 @@ import BuenSaborApp from "./BuenSaborApp";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BuenSaborApp />
-  </React.StrictMode>,
+ 
+    <BuenSaborApp />,
+  
   document.getElementById("root")
 );
 
