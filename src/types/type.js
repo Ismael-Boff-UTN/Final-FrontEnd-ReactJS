@@ -9,9 +9,12 @@ export const types = {
     authLogin : '[auth] login',
     authStartRegister : '[auth] start register',
     authStartTokenRenewal: '[auth] start token renewal',
-    authLogout : '[auth] Logout'
+    authLogout : '[auth] Logout',
     
     //Articles Types
+    articlesGetAll : '[articles] obtaining articles',
+    articleGetOne : '[articles] obtaining one article',
+    articleQuit : '[articles] quiting article',
 
     //Mercado Pago Types
 }

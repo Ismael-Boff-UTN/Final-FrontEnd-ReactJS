@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { startLogout } from "../../actions/auth";
-//import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./styles.css";
 
 export const NavBar = () => {
@@ -10,7 +10,6 @@ export const NavBar = () => {
   const handleLogout = () => {
     dispatch(startLogout());
   };
-
 
   return (
     <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
@@ -23,7 +22,7 @@ export const NavBar = () => {
         />
         &nbsp; El Buen Sabor
       </a>
-      
+
       <button
         class="navbar-toggler"
         type="button"
@@ -54,20 +53,31 @@ export const NavBar = () => {
                 class="rounded-circle"
                 alt="profilePicture"
               />
-              
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-header" href="#!">
+              <a class="dropdown-header" href="#!">
                 Hola {nombre} !
               </a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#!">
-                Ver Mi Perfil
-              </a>
-              <a class="dropdown-item" href="#!" onClick={handleLogout}>
-                Cerrar Sesión
+              <Link to="/userProfile">
+                <a class="dropdown-item" href="#!">
+                  <img
+                    src="https://img.icons8.com/nolan/30/view-file.png"
+                    alt="profile"
+                  />
+                  &nbsp;Ver Mi Perfil
+                </a>
+              </Link>
+
+              <a class="dropdown-item" onClick={handleLogout} href="#!">
+                <img
+                  src="https://img.icons8.com/nolan/30/logout-rounded.png"
+                  alt="logout"
+                />
+                &nbsp;Cerrar Sesión
               </a>
             </div>
+            <div class="menu"></div>
           </li>
         </ul>
       </div>

@@ -8,6 +8,9 @@ import { ProductsList } from "../components/ProductsList";
 import { PublicRoute } from "./PublicRoute";
 import { PrivateRoute } from "./PrivateRoute";
 import { MeteorRainLoading } from 'react-loadingg';
+import {Profile} from '../components/UserProfile/Profile';
+import { obtenerArticulos } from "../actions/articles";
+
 
 export const AppRouter = () => {
   const dispatch = useDispatch();
@@ -15,6 +18,7 @@ export const AppRouter = () => {
 
   useEffect(() => {
     dispatch(startChecking());
+    dispatch(obtenerArticulos());
   }, [dispatch]);
 
   console.log(checking);
@@ -32,6 +36,7 @@ if(checking){
           <PublicRoute exact path="/login" component={LogIn} isAuthenticated={!!uid}/>
           <PublicRoute exact path="/login/new-user" component={Register} />
           <PrivateRoute exact path="/" component={ProductsList} isAuthenticated={!!uid} />
+          <PrivateRoute exact path="/userProfile" component={Profile} isAuthenticated={!!uid} />
 
           <Redirect path="/" />
         </Switch>
