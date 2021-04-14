@@ -1,0 +1,15 @@
+.image {
+  background-color: #490d40;
+  background: url(https://fondosmil.com/fondo/15532.jpg) no-repeat center center;
+  background-size: cover;
+  height: 570px;
+  margin-top: -20px;
+}
+
+.heading {
+  color:white;
+  text-align: center;
+  padding-top: 200px;
+  
+}
+

@@ -104,15 +104,9 @@ export const LogIn = () => {
                       </button>
                     </div>
                     <div className="form-group d-md-flex">
-                      <div className="w-50 text-left">
-                        <label className="checkbox-wrap checkbox-primary mb-0">
-                          Remember Me
-                          <input type="checkbox" checked />
-                          <span className="checkmark"></span>
-                        </label>
-                      </div>
-                      <div className="w-50 text-md-right">
-                        <a href="#!">Forgot Password</a>
+                      
+                      <div className="w-90 text-md-right">
+                        <p>Proyecto Final - Team program1.h</p>
                       </div>
                     </div>
                   </form>

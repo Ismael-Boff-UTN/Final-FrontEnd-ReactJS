@@ -121,7 +121,7 @@ export const Register = () => {
                       name="email"
                       type="text"
                       className="form-control"
-                      placeholder="miemail@gmail.com"
+                      placeholder="Ej. miemail@gmail.com"
                       required
                       onChange={handleInputChange}
                     />
@@ -189,7 +189,7 @@ export const Register = () => {
                       name="numero"
                       type="number"
                       className="form-control"
-                      placeholder="235"
+                      placeholder="Ej. 235"
                       required
                       onChange={handleInputChange}
                     />
@@ -203,16 +203,7 @@ export const Register = () => {
                     </button>
                   </div>
                   <div className="form-group d-md-flex">
-                    <div className="w-50 text-left">
-                      <label className="checkbox-wrap checkbox-primary mb-0">
-                        Recordarme
-                        <input type="checkbox" checked />
-                        <span className="checkmark"></span>
-                      </label>
-                    </div>
-                    <div className="w-50 text-md-right">
-                      <a href="#!">Olvide Mi Contraseña</a>
-                    </div>
+                    
                   </div>
                 </form>
               </div>

@@ -17,4 +17,7 @@ export const types = {
     articleQuit : '[articles] quiting article',
 
     //Mercado Pago Types
+
+    //Cart
+    addArticleToCart : '[cart] adding item to cart'
 }

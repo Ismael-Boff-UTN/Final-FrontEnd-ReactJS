@@ -1,9 +1,16 @@
 import React from "react";
+import {useDispatch} from 'react-redux';
+import { obtenerArticulo } from "../../actions/cart";
 import "./styles.css";
 
+
 export const ProductAvailable = ({ articulo }) => {
+  const dispatch = useDispatch();
+  const handleAddItemToCart = (id) => {
+    dispatch(obtenerArticulo(id));
+  };
   return (
-    <div class="col mb-3">
+    <div class="col mb-4">
       <div class="card h-100">
         <div class="profile-card-4 text-center">
           <img
@@ -14,8 +21,8 @@ export const ProductAvailable = ({ articulo }) => {
           />
           <div class="profile-content">
             <div class="profile-name">{articulo.denominacion}</div>
-            <div class="profile-description">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+             <div class="profile-description">
+             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor.
             </div>
             <div class="row">
@@ -27,7 +34,7 @@ export const ProductAvailable = ({ articulo }) => {
               </div>
               <div class="col-6">
                 <div class="profile-overview">
-                  <button class="btn btn-success">Comprar</button>
+                  <button class="btn btn-success" onClick={()=> handleAddItemToCart(articulo._id)}>Comprar</button>
                 </div>
               </div>
             </div>

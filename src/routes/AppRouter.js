@@ -7,7 +7,7 @@ import { startChecking } from "../actions/auth";
 import { ProductsList } from "../components/ProductsList";
 import { PublicRoute } from "./PublicRoute";
 import { PrivateRoute } from "./PrivateRoute";
-import { MeteorRainLoading } from 'react-loadingg';
+import { SemipolarLoading } from 'react-loadingg';
 import {Profile} from '../components/UserProfile/Profile';
 import { obtenerArticulos } from "../actions/articles";
 
@@ -25,7 +25,7 @@ export const AppRouter = () => {
 
   
 if(checking){
-  return (<MeteorRainLoading />);
+  return (<SemipolarLoading />);
 }
   
 
