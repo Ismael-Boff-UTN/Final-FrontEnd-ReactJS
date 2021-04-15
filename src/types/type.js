@@ -10,6 +10,12 @@ export const types = {
     authStartRegister : '[auth] start register',
     authStartTokenRenewal: '[auth] start token renewal',
     authLogout : '[auth] Logout',
+
+    //Autentication Google
+    authCheckingGoogle : '[authG] Checking login state',
+    authCheckingFinishGoogle: '[authG] Finish cheking login state',
+    authStartLoginGoogle : '[authG] Start login',
+    authLoginGoogle : '[authG] login',
     
     //Articles Types
     articlesGetAll : '[articles] obtaining articles',

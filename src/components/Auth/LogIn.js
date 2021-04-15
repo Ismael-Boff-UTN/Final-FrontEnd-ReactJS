@@ -2,10 +2,19 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import "./styles.css";
+import { GoogleLogin } from "react-google-login";
 //import Swal from "sweetalert2";
-import { startLogin } from "../../actions/auth";
+import { startLogin, startLoginGoogle } from "../../actions/auth";
 
 export const LogIn = () => {
+  const responseGoogle = (response) => {
+    console.log(response);
+
+    var id_token = response.tc.id_token;
+
+    dispatch(startLoginGoogle(id_token));
+  };
+
   //const actualYear = new Date().getFullYear();
   const dispatch = useDispatch();
 
@@ -25,19 +34,14 @@ export const LogIn = () => {
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    // if (email === "" || password === "") {
-    //  Swal.fire("Error", "Campos Vacios!", "warning");
-    //}
 
     dispatch(startLogin(email, password));
-    
   };
 
   return (
     <>
       <section className="ftco-section">
         <div className="container">
-          
           <div className="row justify-content-center">
             <div className="col-md-12 col-lg-10">
               <div className="wrap d-md-flex">
@@ -103,8 +107,20 @@ export const LogIn = () => {
                         Iniciar Sesión
                       </button>
                     </div>
+                    <div className="form-group px-3">
+                      <div className="text-center">
+                        <GoogleLogin
+                          clientId="1068418280364-qlcmg4k58169if3h5jis6plnfmvml8e8.apps.googleusercontent.com"
+                          buttonText="Iniciar Sesión Con Google"
+                          onSuccess={responseGoogle}
+                          isSignedIn={true}
+                          onFailure={responseGoogle}
+                          cookiePolicy={"single_host_origin"}
+                        />
+                      </div>
+                    </div>
+
                     <div className="form-group d-md-flex">
-                      
                       <div className="w-90 text-md-right">
                         <p>Proyecto Final - Team program1.h</p>
                       </div>

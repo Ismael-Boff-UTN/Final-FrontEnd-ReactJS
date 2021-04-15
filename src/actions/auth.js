@@ -20,7 +20,30 @@ export const startLogin = (email, password) => {
         login({
           uid: body.usuario.uid,
           name: body.usuario.nombre,
-          resto : body.usuario
+          resto: body.usuario,
+        })
+      );
+    } else {
+      Swal.fire("Error", `${body.msg}`, "warning");
+    }
+  };
+};
+
+export const startLoginGoogle = (id_token) => {
+  return async (dispatch) => {
+    const response = await fetchNoToken("auth/google", { id_token }, "POST");
+    const body = await response.json();
+    console.log(body);
+
+    if (body.msg === 'Google OK') {
+      localStorage.setItem("tokenGoogle", body.token);
+      localStorage.setItem("tokenGoogle-init-date", new Date().getTime());
+
+      dispatch(
+        login({
+          uid: body.usuario.uid,
+          name: body.usuario.nombre,
+          resto: body.usuario,
         })
       );
     } else {
@@ -77,7 +100,7 @@ export const startChecking = () => {
         login({
           uid: body._id,
           name: body.nombre,
-          resto : body.usuario,
+          resto: body.usuario,
         })
       );
     } else {
@@ -95,14 +118,13 @@ const login = (user) => ({
   payload: user,
 });
 
-
-export const startLogout = () =>{
-  return (dispatch) =>{
+export const startLogout = () => {
+  return (dispatch) => {
     localStorage.clear();
     dispatch(logout());
-  }
-}
+  };
+};
 
-const logout = () =>({
-  type: types.authLogout
-})
+const logout = () => ({
+  type: types.authLogout,
+});
