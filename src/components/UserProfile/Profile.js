@@ -15,8 +15,8 @@ export const Profile = () => {
     <>
       <NavBar />
       <div className="page-content page-container" id="page-content">
-        <div className="padding">
-          <div className="row container d-flex justify-content-center">
+        <div className="mt-3">
+          <div className="row d-flex justify-content-center">
             <div className="col-xl-12 col-md-12 col-sm-12">
               <div className="card user-card-full">
                 <div className="row m-l-0 m-r-0">
@@ -98,7 +98,7 @@ export const Profile = () => {
                         Historial De Pedidos
                       </h6>
                       <div className="row">
-                        <table class="table table-dark">
+                        <table class="table table-dark table-responsive">
                           <thead>
                             <tr>
                               <th scope="col">Numero</th>

@@ -23,12 +23,13 @@ export const Cart = () => {
         aria-expanded="false"
       >
         <img
-          src="https://play-lh.googleusercontent.com/E8abWF0D4nt9Il12VRFBqWkqawYF2g7vPmyspPOYqXzh9PH8VWDdT0hIF9viC5le-Lc"
+          src="assets/images/basket.png"
           width="40"
           height="40"
           className="rounded-circle"
           alt="bagPicture"
         />
+        <span className="badge badge-warning">{cart.length}</span>
       </a>
       <div
         className="dropdown-menu dropdown-menu-right scroll-menu"
@@ -41,7 +42,18 @@ export const Cart = () => {
         </p>
         <div className="dropdown-divider"></div>
         {cart.length === 0 ? (
-          <p className="text-center">Carrito Vacio :c</p>
+          <p className="text-center">
+            <button className="btn">
+              <img
+                src="assets/images/noItems.png"
+                width="45"
+                height="45"
+                className="rounded-circle"
+                alt="noItems"
+              />
+              <span>Sin Articulos</span>
+            </button>
+          </p>
         ) : (
           cart.map((item) => (
             <ProductItem key={item.articulo._id} articulo={item.articulo} />

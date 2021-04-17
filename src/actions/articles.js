@@ -11,7 +11,7 @@ export const obtenerArticulos = () => {
         "GET"
       );
       const body = await response.json();
-      console.log(body);
+      //console.log(body);
   
       if (body.status) {
         dispatch(

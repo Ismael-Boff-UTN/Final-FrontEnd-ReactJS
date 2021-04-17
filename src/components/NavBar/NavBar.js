@@ -1,20 +1,23 @@
 import React from "react";
 import { Cart } from "./Cart";
+import { Link } from "react-router-dom";
 import { UserAvatar } from "./UserAvatar";
 import "./styles.css";
 
 export const NavBar = () => {
   return (
-    <nav className="navbar navbar-dark bg-dark navbar-expand-sm">
-      <a className="navbar-brand" href="#!">
-        <img
-          src="https://miro.medium.com/max/320/0*_rAD9NgK7l6KSlNc.png"
-          width="60"
-          height="60"
-          alt="logo"
-        />
-        &nbsp; El Buen Sabor
-      </a>
+    <nav className="navbar navbar-light bg-white navbar-expand-sm">
+      <Link to="/">
+        <a className="navbar-brand" href="#!">
+          <img
+            src="assets/images/logo2.png"
+            width="60"
+            height="60"
+            alt="logo"
+          />
+          &nbsp; El Buen Sabor
+        </a>
+      </Link>
 
       <button
         className="navbar-toggler"

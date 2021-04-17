@@ -19,22 +19,6 @@ export const fetchNoToken = (endpoint, data, method = "GET") => {
   }
 };
 
-export const fetchGoogle = (endpoint, data, method = "GET") => {
-  const url = `${baseURLHeroku}/${endpoint}`;
-  
-  if (method === "GET") {
-    return fetch(url);
-  } else {
-    return fetch(url, {
-      method,
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-  }
-};
-
 //Peticiones Cuando El Usuario Ya Esta Logeado Con Su Token
 export const fetchWithToken = (endpoint, data, method = "GET") => {
   const url = `${baseURLHeroku}/${endpoint}`;

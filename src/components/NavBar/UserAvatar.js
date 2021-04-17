@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import { GoogleLogout } from "react-google-login";
 
 export const UserAvatar = () => {
-  const { nombre, img, google } = useSelector((state) => state.auth.resto);
+  const { nombre, img, google, apellido } = useSelector(
+    (state) => state.auth.resto
+  );
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(startLogout());
@@ -26,20 +28,21 @@ export const UserAvatar = () => {
       >
         <img
           src={img}
-          width="40"
-          height="40"
+          width="45"
+          height="45"
           className="rounded-circle"
           alt="profilePicture"
         />
+        <span className="ml-2 mr-1 text-dark">{nombre + " " + apellido}</span>
       </a>
       <div
         className="dropdown-menu dropdown-menu-right"
         aria-labelledby="navbarDropdownMenuLink"
       >
-        <p className="dropdown-header">Hola {nombre} !</p>
+        <p className="dropdown-header text-dark text-center">Hola {nombre} !</p>
         <div className="dropdown-divider"></div>
         <Link to="/userProfile">
-          <button className="dropdown-item">
+          <button type="button" className="btn dropdown-item">
             <img
               src="assets/images/profile.svg"
               alt="profile"
@@ -52,6 +55,21 @@ export const UserAvatar = () => {
         {google ? (
           <GoogleLogout
             clientId="1068418280364-qlcmg4k58169if3h5jis6plnfmvml8e8.apps.googleusercontent.com"
+            render={(renderProps) => (
+              <button
+                type="button"
+                className="btn dropdown-item"
+                onClick={renderProps.onClick}
+                disabled={renderProps.disabled}
+              >
+                <img
+                  src="assets/images/logout.svg"
+                  alt="logout"
+                  style={{ maxHeight: "23px", maxWidth: "23px" }}
+                />
+                &nbsp;Cerrar Sesión
+              </button>
+            )}
             buttonText="Cerrar Sesión"
             onLogoutSuccess={logout}
           ></GoogleLogout>

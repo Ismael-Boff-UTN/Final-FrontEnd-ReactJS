@@ -11,7 +11,7 @@ export const ProductAvailable = ({ articulo }) => {
   };
   return (
     <div class="col mb-4">
-      <div class="card h-100">
+      <div class="card">
         <div class="profile-card-4 text-center">
           <img
             src={articulo.imagen}
