@@ -13,7 +13,7 @@ export const DashboardRoutes = () => {
           <Route exact path="/userProfile" component={Profile} />
 
           {/*Si El Usuario Intenta Ingresar A Cualquier Otra URL Que No Existe, Se Lo Redirecciona */}
-          <Redirect to="/product-list" />
+          <Redirect to="/" />
         </Switch>
       </div>
     </>

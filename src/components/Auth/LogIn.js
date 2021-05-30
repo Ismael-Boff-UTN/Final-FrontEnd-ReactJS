@@ -10,7 +10,7 @@ export const LogIn = () => {
   const responseGoogle = (response) => {
     console.log(response);
 
-    var id_token = response.tc.id_token;
+    var id_token = response.tokenId;
 
     dispatch(startLoginGoogle(id_token));
   };
@@ -49,7 +49,7 @@ export const LogIn = () => {
                   <div className="text w-100">
                     <h2>Bienvenido A El Buen Sabor</h2>
                     <p>Aun No Tienes Una Cuenta?</p>
-                    <Link to="/login/new-user">
+                    <Link to="/new-user">
                       <a href="#!" className="btn btn-white btn-outline-white">
                         Registrarse
                       </a>

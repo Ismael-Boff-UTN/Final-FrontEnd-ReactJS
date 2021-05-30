@@ -1,17 +1,22 @@
 import React from "react";
+import {useDispatch} from 'react-redux';
+import { quitarArticuloCart } from "../../actions/cart";
 
 export const ProductItem = ({ articulo }) => {
+  const dispatch = useDispatch();
+const onQuitArticulo = (id) =>{
+       dispatch(quitarArticuloCart(id));
+}
+
   return (
     <>
       <p className="dropdown-header text-center">
-        
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-secondary active">
-            <input type="radio" name="options" id="option1" checked />  {articulo.denominacion + " - $" + articulo.precioVenta}
-          </label>
-          <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option2" /> X
-          </label>
+          <button className="btn btn-secondary">
+            {articulo.denominacion + " - $" + articulo.precioVenta}
+          </button>
+
+          <button className="btn btn-danger" onClick={()=> onQuitArticulo(articulo._id)} >X</button>
         </div>
       </p>
     </>

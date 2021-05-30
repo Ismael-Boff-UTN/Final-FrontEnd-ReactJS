@@ -33,13 +33,14 @@ if(checking){
     <Router>
       <div>
         <Switch>
-          <PublicRoute exact path="/login" component={LogIn} isAuthenticated={!!uid}/>
-          <PublicRoute exact path="/login/new-user" component={Register} />
-          <PrivateRoute exact path="/" component={ProductsList} isAuthenticated={!!uid} />
+          <PublicRoute exact path="/" component={LogIn} isAuthenticated={!!uid}/>
+          <PublicRoute exact path="/new-user" component={Register} />
+          <PrivateRoute exact path="/product-list" component={ProductsList} isAuthenticated={!!uid} />
           <PrivateRoute exact path="/userProfile" component={Profile} isAuthenticated={!!uid} />
 
-          <Redirect path="/" />
+          
         </Switch>
+        <Redirect path="/" />
       </div>
     </Router>
   );

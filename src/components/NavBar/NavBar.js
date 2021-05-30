@@ -6,7 +6,7 @@ import "./styles.css";
 
 export const NavBar = () => {
   return (
-    <nav className="navbar navbar-light bg-white navbar-expand-sm">
+    <nav className="navbar navbar-light bg-white navbar-expand-sm fixed-top">
       <Link to="/">
         <a className="navbar-brand" href="#!">
           <img
