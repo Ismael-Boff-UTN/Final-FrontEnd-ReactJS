@@ -40,7 +40,7 @@ if(checking){
 
           
         </Switch>
-        <Redirect path="/" />
+        <Redirect path="/"/>
       </div>
     </Router>
   );

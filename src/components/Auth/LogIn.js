@@ -61,16 +61,7 @@ export const LogIn = () => {
                     <div className="w-100">
                       <h3 className="mb-4">Iniciar Sesión</h3>
                     </div>
-                    <div className="w-100">
-                      <p className="social-media d-flex justify-content-end">
-                        <a
-                          href="#!"
-                          className="social-icon d-flex align-items-center justify-content-center"
-                        >
-                          <span className="fa fa-google"></span>
-                        </a>
-                      </p>
-                    </div>
+                   
                   </div>
                   <form onSubmit={handleSubmitForm} className="signin-form">
                     <div className="form-group mb-3">

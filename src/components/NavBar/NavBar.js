@@ -2,7 +2,6 @@ import React from "react";
 import { Cart } from "./Cart";
 import { Link } from "react-router-dom";
 import { UserAvatar } from "./UserAvatar";
-import "./styles.css";
 
 export const NavBar = () => {
   return (
@@ -31,7 +30,7 @@ export const NavBar = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse ml-auto" id="navbar-list-4">
-        <ul className="navbar-nav">
+        <ul className="navbar-nav" style={{ "margin-left": "auto" }}>
           {/*Perfil De Usuario Dropdown*/}
           <UserAvatar />
           {/*Carrito De Compras Dropdown*/}
