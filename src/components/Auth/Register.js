@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import "./styles.css";
 import { Link } from "react-router-dom";
 import { startRegister } from "../../actions/auth";
+import Avatar from "react-avatar-edit";
 
 export const Register = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,8 @@ export const Register = () => {
     email: "",
     password: "",
     telefono: "",
-    
+
+    img: "",
     rol: "USER_ROLE",
   });
 
@@ -28,6 +30,7 @@ export const Register = () => {
     calle,
     numero,
     domicilio,
+    img,
   } = formValues;
 
   const handleInputChange = ({ target }) => {
@@ -36,11 +39,12 @@ export const Register = () => {
       [target.name]: target.value,
 
       domicilio: {
-        
-        calle,[target.name]: target.value,
-        localidad,[target.name]: target.value,
-        numero,[target.name]: target.value,
-        
+        calle,
+        [target.name]: target.value,
+        localidad,
+        [target.name]: target.value,
+        numero,
+        [target.name]: target.value,
       },
     });
   };
@@ -49,7 +53,31 @@ export const Register = () => {
     e.preventDefault();
 
     console.log(formValues);
-    dispatch(startRegister(nombre, apellido, email, password, telefono, rol, domicilio));
+    dispatch(
+      startRegister(nombre, apellido, email, password, telefono, rol, domicilio, img)
+    );
+  };
+
+  //Avatar Picker
+  const onClose = () => {
+    setFromValues({ img: "" });
+  };
+
+  const onCrop = (img) => {
+    setFromValues({ img });
+  };
+
+  const selectImage = (event) => {
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      setFromValues({
+        ...formValues,
+        img: reader.result,
+      });
+      //console.log(reader.result);
+    };
   };
 
   return (
@@ -63,7 +91,7 @@ export const Register = () => {
                 <div className="text w-100">
                   <h2>Bienvenido A El Buen Sabor</h2>
                   <p>Si Ya Tienes Cuenta</p>
-                  <Link to="/login">
+                  <Link to="/">
                     <a href="#!" className="btn btn-white btn-outline-white">
                       Iniciar Sesión
                     </a>
@@ -75,18 +103,22 @@ export const Register = () => {
                   <div className="w-100">
                     <h3 className="mb-4">Registrarse</h3>
                   </div>
-                  <div className="w-100">
-                    <p className="social-media d-flex justify-content-end">
-                      <a
-                        href="#!"
-                        className="social-icon d-flex align-items-center justify-content-center"
-                      >
-                        <span className="fa fa-google"></span>
-                      </a>
-                    </p>
-                  </div>
                 </div>
                 <form onSubmit={handleSubmitForm} className="signin-form">
+                  <div className="form-group mb-3">
+                    <label className="label" for="img">
+                      Foto De Perfil (Opcional)
+                    </label>
+                    <Avatar
+                      width={330}
+                      height={295}
+                      onCrop={onCrop}
+                      onClose={onClose}
+                      onBeforeFileLoad={selectImage}
+                      src={img}
+                      name="img"
+                    />
+                  </div>
                   <div className="form-group mb-3">
                     <label className="label" for="name">
                       Nombre
@@ -202,9 +234,7 @@ export const Register = () => {
                       Registrarse
                     </button>
                   </div>
-                  <div className="form-group d-md-flex">
-                    
-                  </div>
+                  <div className="form-group d-md-flex"></div>
                 </form>
               </div>
             </div>

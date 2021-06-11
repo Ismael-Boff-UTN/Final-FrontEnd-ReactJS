@@ -28,12 +28,12 @@ export const UserAvatar = () => {
       >
         <img
           src={img}
-          width="45"
-          height="45"
+          width="55"
+          height="55"
           className="rounded-circle"
           alt="profilePicture"
         />
-        <span className="ml-2 mr-1 text-dark">{nombre + " " + apellido}</span>
+        <span className="ml-2 mr-1 text-white">{nombre + " " + apellido}</span>
       </a>
       <div
         className="dropdown-menu dropdown-menu-right"

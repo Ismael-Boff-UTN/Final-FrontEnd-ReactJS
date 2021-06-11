@@ -1,8 +1,7 @@
 import React from "react";
-import {useDispatch} from 'react-redux';
+import { useDispatch } from "react-redux";
 import { obtenerArticulo } from "../../actions/cart";
-import "./styles.css";
-
+//import "./styles.css";
 
 export const ProductAvailable = ({ articulo }) => {
   const dispatch = useDispatch();
@@ -10,37 +9,26 @@ export const ProductAvailable = ({ articulo }) => {
     dispatch(obtenerArticulo(id));
   };
   return (
-    <div class="col mb-4">
-      <div class="card">
-        <div class="profile-card-4 text-center">
+    <>
+      <div className="col">
+        <div class="card h-100">
           <img
             src={articulo.imagen}
-            class="img img-responsive"
-            style={{ maxWidth: "300px", maxHeight: "400px" }}
-            alt="article"
+            className="card-img-top"
+            alt="product"
+            style={{ maxHeight: "400px", maxWidth: "400px" }}
           />
-          <div class="profile-content">
-            <div class="profile-name">{articulo.denominacion}</div>
-             <div class="profile-description">
-             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor.
-            </div>
-            <div class="row">
-              <div class="col-6">
-                <div class="profile-overview">
-                  <p>Precio</p>
-                  <h4>AR$ {articulo.precioVenta}</h4>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="profile-overview">
-                  <button class="btn btn-success" onClick={()=> handleAddItemToCart(articulo._id)}>Comprar</button>
-                </div>
-              </div>
-            </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This is a longer card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </p>
           </div>
         </div>
+        
       </div>
-    </div>
+    </>
   );
 };

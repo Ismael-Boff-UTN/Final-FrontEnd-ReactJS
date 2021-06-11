@@ -39,19 +39,10 @@ export const Profile = () => {
                       <h6 className="f-w-600">
                         {user.nombre + " " + user.apellido}
                       </h6>
-                      <p>{user.rol}</p>{" "}
+
                       <button className="btn btn-primary mt-4">
                         Editar Perfil
                       </button>
-                      <div className="m-b-25 mt-5">
-                        {" "}
-                        <img
-                          src="assets/images/buenSaborLogo.jpg"
-                          className="img-radius"
-                          alt="brandLogo"
-                          style={{ maxWidth: "150px", maxHeight: "150px" }}
-                        />{" "}
-                      </div>
                     </div>
                   </div>
                   <div className="col-sm-8">

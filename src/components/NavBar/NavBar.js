@@ -5,7 +5,7 @@ import { UserAvatar } from "./UserAvatar";
 
 export const NavBar = () => {
   return (
-    <nav className="navbar navbar-light bg-white navbar-expand-sm fixed-top">
+    <nav className="navbar navbar-dark bg-dark navbar-expand-sm">
       <Link to="/">
         <a className="navbar-brand" href="#!">
           <img

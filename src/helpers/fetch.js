@@ -1,10 +1,10 @@
 //const baseURL = "http://localhost:4000/api";
-const baseURLHeroku = 'https://buen-sabor-api.herokuapp.com/api';
+const baseURL = 'https://buen-sabor-api.herokuapp.com/api';
 
 
 //Peticiones Base, Sin Token (Inciar Sesión O Registrarse)
 export const fetchNoToken = (endpoint, data, method = "GET") => {
-  const url = `${baseURLHeroku}/${endpoint}`;
+  const url = `${baseURL}/${endpoint}`;
 
   if (method === "GET") {
     return fetch(url);
@@ -21,7 +21,7 @@ export const fetchNoToken = (endpoint, data, method = "GET") => {
 
 //Peticiones Cuando El Usuario Ya Esta Logeado Con Su Token
 export const fetchWithToken = (endpoint, data, method = "GET") => {
-  const url = `${baseURLHeroku}/${endpoint}`;
+  const url = `${baseURL}/${endpoint}`;
   const token = localStorage.getItem('token') || '';
 
   if (method === "GET") {

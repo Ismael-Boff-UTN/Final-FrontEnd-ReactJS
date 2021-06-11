@@ -35,7 +35,7 @@ export const startLoginGoogle = (id_token) => {
     const body = await response.json();
     //console.log(body);
 
-    if (body.msg === 'Google OK') {
+    if (body.msg === "Google OK") {
       localStorage.setItem("tokenGoogle", body.token);
       localStorage.setItem("tokenGoogle-init-date", new Date().getTime());
 
@@ -59,15 +59,17 @@ export const startRegister = (
   password,
   telefono,
   rol,
-  domicilio
+  domicilio,
+  img
 ) => {
   return async (dispatch) => {
     const response = await fetchNoToken(
       "usuarios",
-      { nombre, apellido, email, password, telefono, rol, domicilio },
+      { nombre, apellido, email, password, telefono, rol, domicilio, img },
       "POST"
     );
     const body = await response.json();
+    console.log(body);
 
     if (body.msg === "Login OK") {
       localStorage.setItem("token", body.token);
@@ -80,7 +82,7 @@ export const startRegister = (
         })
       );
     } else {
-      Swal.fire("", `${body.msg}`, "success");
+      Swal.fire("", `${body.errors[0].msg}`, "warning");
     }
   };
 };

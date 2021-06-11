@@ -1,16 +1,24 @@
-
 .image {
-  background-color: #490d40;
-  background: url(https://www.wallpapertip.com/wmimgs/50-504389_hd-restaurant-wallpaper-hd-restaurant-design.jpg) no-repeat center center;
-  background-size: cover;
+  background: #12c2e9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f64f59,
+    #c471ed,
+    #12c2e9
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f64f59,
+    #c471ed,
+    #12c2e9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   height: 570px;
   margin-top: -20px;
 }
 
 .heading {
-  color:white;
+  color: white;
   text-align: center;
   padding-top: 200px;
-  
 }
-

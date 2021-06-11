@@ -9,18 +9,20 @@ export const ProductsList = () => {
 
   return (
     <>
-      <NavBar />
-      <Header />
+      <div style={{background:"black"}}>
+        <NavBar />
+        <Header />
 
-      <div className="container productos mt-4">
-        <h1 className="text-center mb-5">Nuestros Productos</h1>
-        <div className="row">
-          {articulos.map((articulo) => (
-            <ProductAvailable key={articulo._id} articulo={articulo} />
-          ))}
+        <div className="container mt-4">
+          <h1 className="text-center mb-5">Nuestros Productos</h1>
+          <div className="row row-cols-1 row-cols-md-3 g-4">
+            {articulos.map((articulo) => (
+              <ProductAvailable key={articulo._id} articulo={articulo} />
+            ))}
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 };
